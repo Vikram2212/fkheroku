@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-wrapper #2196f3 blue">
+                <div class="img-fluid" style="max-width: 100px">
+                <a href="" class="brand-logo yellow-text">FLIPKART</a></div>
+                <div class="container">
+                    <form action="{% url 'home' %}" method="post">
+                      {% csrf_token %}
+                    <div class="container">
+                        <div class="input-group mb-3 w-75 p-3 mx-auto">
+                            <input type="text" class="form-control" name="search" placeholder="Search">
+                            <div class="input-group-append">
+                            <button class="btn waves-effect waves-light yellow-text" type="submit" name="action">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <h1>{{ search }}</h1>
+    </div>
+</body>
+</html>
