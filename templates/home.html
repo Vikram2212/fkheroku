@@ -1,35 +1,58 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flipkart</title>
+    <title>Codedaddies List</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="nav-wrapper #2196f3 blue">
-                <div class="img-fluid" style="max-width: 100px">
-                <a href="" class="brand-logo yellow-text">FLIPKART</a></div>
-                <div class="container">
-                    <form action="{% url 'home' %}" method="post">
-                      {% csrf_token %}
-                    <div class="container">
-                        <div class="input-group mb-3 w-75 p-3 mx-auto">
-                            <input type="text" class="form-control" name="search" placeholder="Search">
-                            <div class="input-group-append">
-                            <button class="btn waves-effect waves-light yellow-text" type="submit" name="action">Search</button>
-                            </div>
-                        </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </nav>
-
-        <h1>{{ search }}</h1>
+  <nav class="#ec407a pink lighten-1">
+    <div class="container nav-wrapper">
+      <a href="/" class="brand-logo">Codedaddies List</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/" style="font-size: x-large">Home</a></li>
+      </ul>
     </div>
+  </nav>
+<div class="container">
+<h1 class="black-text" style="text-align: center">Simple Testing of the page for codedaddies list</h1>
+<div class="row">
+    <div class="col s4">
+        <div class="center">
+            <i class="large material-icons" style="color: #EE6E73">flash_on</i>
+            <p>Fast craiglist</p>
+            <p class="light center">Scrape away right here</p>
+        </div>
+    </div>
+    <div class="col s4">
+        <div class="center">
+            <i class="large material-icons" style="color: #EE6E73">camera</i>
+            <p>Fast craiglist</p>
+            <p class="light center">Scrape away right here</p>
+        </div>
+    </div>
+    <div class="col s4">
+        <div class="center">
+            <i class="large material-icons" style="color: #EE6E73">layers</i>
+            <p>Fast craiglist</p>
+            <p class="light center">Scrape away right here</p>
+        </div>
+    </div>
+</div>
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="search" placeholder="search">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Search</button>
+    </form>
+{% block content %}
+
+{% endblock %}
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
